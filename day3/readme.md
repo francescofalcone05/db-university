@@ -1,8 +1,16 @@
 GROUP BY
 1. Contare quanti iscritti ci sono stati ogni anno
+SELECT COUNT(id) AS nr_studenti, year( enrolment_date) AS anno FROM `students` GROUP BY year( enrolment_date);
+
 2. Contare gli insegnanti che hanno l'ufficio nello stesso edificio
+SELECT COUNT(id) AS nr_insegnanti, office_address AS ufficio FROM `teachers` GROUP BY office_address;
+
 3. Calcolare la media dei voti di ogni appello d'esame
+SELECT exam_id AS esame, AVG(vote) AS media_voti FROM `exam_student` GROUP BY exam_id;
+
 4. Contare quanti corsi di laurea ci sono per ogni dipartimento
+SELECT department_id, COUNT(id) AS nr_corsi FROM `degrees` GROUP BY department_id;
+
 
 JOIN ON
 1. Selezionare tutti gli studenti iscritti al Corso di Laurea in Economia
@@ -11,4 +19,5 @@ JOIN ON
 4. Selezionare tutti gli studenti con i dati relativi al corso di laurea a cui sono iscritti e il relativo dipartimento, in ordine alfabetico per cognome e nome
 5. Selezionare tutti i corsi di laurea con i relativi corsi e insegnanti
 6. Selezionare tutti i docenti che insegnano nel Dipartimento di Matematica (54)
-7. BONUS: Selezionare per ogni studente il numero di tentativi sostenuti per ogni esame, stampando anche il voto massimo. Successivamente, filtrare i tentativi con voto minimo 18
+7. BONUS: Selezionare per ogni studente il numero di tentativi sostenuti per ogni esame, stampando anche il voto massimo. 
+Successivamente, filtrare i tentativi con voto minimo 18
